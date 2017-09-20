@@ -1,0 +1,116 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Exo+2:500|Montserrat:700|Source+Sans+Pro:300');
+// Variables
+@import "variables";
+//mixins
+@import "mixins";
+//includes
+@import "items";
+
+body {
+     font-size: 100%;
+     font-family: $font-text;
+     background: $body-bg;
+     background-image: url(../media/texture.png);
+     background-repeat: repeat;
+     background-size: auto;
+
+}
+h1,h2,h3 {
+     font-family: $font-title;
+}
+h4,h5,h6 {
+     font-family: $font-subtitle;
+}
+p, a, span, dd {
+     font-family: $font-text;
+}
+
+header {
+     height: 700px;
+     @include parallax('http://www.miraflores.gob.pe/Gestorw3b/files/img/9505-20624-parque-del-amor.jpg');
+     @include overlay-filter($brand-primary);
+     .caption {
+          padding: 1em;
+          .gretting {
+               font-family: $font-subtitle;
+          }
+          .brand {
+               font-family: $font-title;
+               text-transform: capitalize;
+          }
+          .mn-top {
+               ul {
+                    margin: 0;
+                    li {
+                         padding: .4em .5em;
+                         margin: auto .8em;
+                         font-family: $font-text;
+                         font-size: 1.1em;
+                         cursor: pointer;
+                         text-transform: capitalize;
+                         position: relative;
+                         &::before, &::after {
+                              position: absolute;
+                              bottom: 0;
+                              width: 0%;
+                              height: 3px;
+                              content: " ";
+                              @include transition(width .35s);
+                         }
+                         &::before {
+                              right: 50%;
+                         }
+                         &::after {
+                              left: 50%;
+                         }
+                         &:hover, &.active {
+                              &::before, &::after {
+                                   width: 50%;
+                              }
+                         }
+                         &.drink {
+                              &::before, &::after {
+                                   background: $brand-danger;
+                              }
+                         }
+                         &.shop {
+                              &::before, &::after {
+                                   background: $brand-primary;
+                              }
+                         }
+                         &.food {
+                              &::before, &::after {
+                                   background: $brand-warning;
+                              }
+                         }
+                         &.walk {
+                              &::before, &::after {
+                                   background: $brand-success;
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}
+
+.main-content {
+     @include masonry(4);
+}
+
+
+footer {
+     margin-top: 50px;
+     padding: 2em 0em;
+     position: relative;
+     &::before {
+          position: absolute;
+          left: 20%;
+          top: -3px;
+          content: "";
+          width: 60%;
+          height: 3px;
+          background: lighten($brand-primary, 20%);
+     }
+}

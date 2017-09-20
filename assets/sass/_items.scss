@@ -1,0 +1,76 @@
+.item {
+     position: relative;
+     margin: 0;
+     overflow: hidden;
+     cursor: pointer;
+     > img {
+          filter: grayscale(30%);
+          @include vendor-prefixes(transform, scale3d(1,1,1));
+          @include transition(filter .35s, transform .35s) ;
+     }
+     figcaption {
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          right: 0;
+          left: 0;
+          background: transparentize($brand-dark, 1);
+          @include transition(background .35s);
+          &::before {
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+               background: transparentize($brand-primary, .5);
+               content: ' ';
+               @include vendor-prefixes(transform, scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-110%,0));
+               @include transition(transform .6s);
+          }
+          .name {
+               position: absolute;
+               top: 20px;
+               left: 17px;
+               padding: .3em;
+               h3 {
+                    margin: 0;
+                    color: $brand-light;
+                    font-size: 1.4em;
+                    text-transform: uppercase;
+                    span {
+                         font-family: $font-subtitle;
+                    }
+               }
+          }
+          .desc {
+               position: absolute;
+               right: 25px;
+               bottom: 50px;
+               padding: .5em 1em;
+               border-right: 3px solid $brand-light;
+               opacity: 0;
+               @include transition( opacity .5s);
+               p {
+                    margin: 0;
+                    color: $brand-light;
+                    font-family: $font-subtitle;
+                    font-size: 1.1em;
+               }
+          }
+     }
+     &:hover {
+          > img {
+               filter: grayscale(0%);
+               @include vendor-prefixes(transform, scale3d(1.05,1.05,1));
+          }
+          figcaption {
+               background: transparentize($brand-dark, .5);
+               .desc {
+                    opacity: 1;
+               }
+               &::before {
+                    @include vendor-prefixes(transform, scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,110%,0));
+               }
+          }
+     }
+}

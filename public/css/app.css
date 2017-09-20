@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css?family=Exo+2:500|Montserrat:700|Source+Sans+Pro:300");
+.item {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  cursor: pointer; }
+  .item > img {
+    filter: grayscale(30%);
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    -moz-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    -o-transform: scale3d(1, 1, 1);
+    -webkit-transition: filter 0.35s, transform 0.35s;
+    transition: filter 0.35s, transform 0.35s;
+    -moz-transition: filter 0.35s, transform 0.35s;
+    -ms-transition: filter 0.35s, transform 0.35s;
+    -o-transition: filter 0.35s, transform 0.35s; }
+  .item figcaption {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: rgba(33, 33, 33, 0);
+    -webkit-transition: background 0.35s;
+    transition: background 0.35s;
+    -moz-transition: background 0.35s;
+    -ms-transition: background 0.35s;
+    -o-transition: background 0.35s; }
+    .item figcaption::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(48, 151, 209, 0.5);
+      content: ' ';
+      -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+      transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+      -moz-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+      -ms-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+      -o-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+      -webkit-transition: transform 0.6s;
+      transition: transform 0.6s;
+      -moz-transition: transform 0.6s;
+      -ms-transition: transform 0.6s;
+      -o-transition: transform 0.6s; }
+    .item figcaption .name {
+      position: absolute;
+      top: 20px;
+      left: 17px;
+      padding: .3em; }
+      .item figcaption .name h3 {
+        margin: 0;
+        color: #fff;
+        font-size: 1.4em;
+        text-transform: uppercase; }
+        .item figcaption .name h3 span {
+          font-family: "Exo 2", sans-serif; }
+    .item figcaption .desc {
+      position: absolute;
+      right: 25px;
+      bottom: 50px;
+      padding: .5em 1em;
+      border-right: 3px solid #fff;
+      opacity: 0;
+      -webkit-transition: opacity 0.5s;
+      transition: opacity 0.5s;
+      -moz-transition: opacity 0.5s;
+      -ms-transition: opacity 0.5s;
+      -o-transition: opacity 0.5s; }
+      .item figcaption .desc p {
+        margin: 0;
+        color: #fff;
+        font-family: "Exo 2", sans-serif;
+        font-size: 1.1em; }
+  .item:hover > img {
+    filter: grayscale(0%);
+    -webkit-transform: scale3d(1.05, 1.05, 1);
+    transform: scale3d(1.05, 1.05, 1);
+    -moz-transform: scale3d(1.05, 1.05, 1);
+    -ms-transform: scale3d(1.05, 1.05, 1);
+    -o-transform: scale3d(1.05, 1.05, 1); }
+  .item:hover figcaption {
+    background: rgba(33, 33, 33, 0.5); }
+    .item:hover figcaption .desc {
+      opacity: 1; }
+    .item:hover figcaption::before {
+      -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 110%, 0);
+      transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 110%, 0);
+      -moz-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 110%, 0);
+      -ms-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 110%, 0);
+      -o-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 110%, 0); }
+
+body {
+  font-size: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+  background: #fafafa;
+  background-image: url(../media/texture.png);
+  background-repeat: repeat;
+  background-size: auto; }
+
+h1, h2, h3 {
+  font-family: "Montserrat", sans-serif; }
+
+h4, h5, h6 {
+  font-family: "Exo 2", sans-serif; }
+
+p, a, span, dd {
+  font-family: "Source Sans Pro", sans-serif; }
+
+header {
+  height: 700px;
+  background-image: url("http://www.miraflores.gob.pe/Gestorw3b/files/img/9505-20624-parque-del-amor.jpg");
+  background-position: center bottom;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative; }
+  header::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: " ";
+    z-index: 1;
+    background: rgba(48, 151, 209, 0.2); }
+  header > * {
+    position: relative;
+    z-index: 2; }
+  header .caption {
+    padding: 1em; }
+    header .caption .gretting {
+      font-family: "Exo 2", sans-serif; }
+    header .caption .brand {
+      font-family: "Montserrat", sans-serif;
+      text-transform: capitalize; }
+    header .caption .mn-top ul {
+      margin: 0; }
+      header .caption .mn-top ul li {
+        padding: .4em .5em;
+        margin: auto .8em;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 1.1em;
+        cursor: pointer;
+        text-transform: capitalize;
+        position: relative; }
+        header .caption .mn-top ul li::before, header .caption .mn-top ul li::after {
+          position: absolute;
+          bottom: 0;
+          width: 0%;
+          height: 3px;
+          content: " ";
+          -webkit-transition: width 0.35s;
+          transition: width 0.35s;
+          -moz-transition: width 0.35s;
+          -ms-transition: width 0.35s;
+          -o-transition: width 0.35s; }
+        header .caption .mn-top ul li::before {
+          right: 50%; }
+        header .caption .mn-top ul li::after {
+          left: 50%; }
+        header .caption .mn-top ul li:hover::before, header .caption .mn-top ul li:hover::after, header .caption .mn-top ul li.active::before, header .caption .mn-top ul li.active::after {
+          width: 50%; }
+        header .caption .mn-top ul li.drink::before, header .caption .mn-top ul li.drink::after {
+          background: #bf5329; }
+        header .caption .mn-top ul li.shop::before, header .caption .mn-top ul li.shop::after {
+          background: #3097D1; }
+        header .caption .mn-top ul li.food::before, header .caption .mn-top ul li.food::after {
+          background: #cbb956; }
+        header .caption .mn-top ul li.walk::before, header .caption .mn-top ul li.walk::after {
+          background: #2ab27b; }
+
+.main-content {
+  -webkit-column-count: 4;
+  column-count: 4;
+  -moz-column-count: 4;
+  -ms-column-count: 4;
+  -o-column-count: 4;
+  -webkit-column-gap: 0px;
+  column-gap: 0px;
+  -moz-column-gap: 0px;
+  -ms-column-gap: 0px;
+  -o-column-gap: 0px;
+  -webkit-column-rule: 0px;
+  column-rule: 0px;
+  -moz-column-rule: 0px;
+  -ms-column-rule: 0px;
+  -o-column-rule: 0px; }
+
+footer {
+  margin-top: 50px;
+  padding: 2em 0em;
+  position: relative; }
+  footer::before {
+    position: absolute;
+    left: 20%;
+    top: -3px;
+    content: "";
+    width: 60%;
+    height: 3px;
+    background: #83c1e4; }
+
+/*# sourceMappingURL=app.css.map */
