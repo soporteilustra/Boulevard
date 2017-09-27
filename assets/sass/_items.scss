@@ -22,7 +22,7 @@
                left: 0;
                width: 100%;
                height: 100%;
-               background: transparentize($brand-primary, .5);
+               background: transparentize($brand-success, .5);
                content: ' ';
                @include vendor-prefixes(transform, scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-110%,0));
                @include transition(transform .6s);
@@ -49,7 +49,7 @@
                padding: .5em 1em;
                border-right: 3px solid $brand-light;
                opacity: 0;
-               @include transition( opacity .5s);
+               @include transition( opacity 1s);
                p {
                     margin: 0;
                     color: $brand-light;
@@ -64,7 +64,7 @@
                @include vendor-prefixes(transform, scale3d(1.05,1.05,1));
           }
           figcaption {
-               background: transparentize($brand-dark, .5);
+               background: transparentize($brand-dark, .4);
                .desc {
                     opacity: 1;
                }

@@ -6,15 +6,14 @@
      @include vendor-prefixes('column-gap', $gap);
      @include vendor-prefixes('column-rule', $rule);
 }
-@mixin parallax($url) {
+@mixin parallax($url, $pos) {
      background-image: url($url);
-     background-position: center bottom;
+     background-position: center $pos;
      background-attachment: fixed;
      background-size: cover;
 }
 @mixin overlay-filter($color, $opacity: .2) {
      $amount: 1 - $opacity;
-     position: relative;
      &::after {
           position: absolute;
           top: 0;
@@ -25,7 +24,7 @@
           z-index: 1;
           background: transparentize($color, $amount);
      }
-     > * {
+     > *[class^="container"] {
           position: relative;
           z-index: 2;
      }

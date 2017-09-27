@@ -1,0 +1,141 @@
+header {
+     position: relative;
+     height: 100vh;
+     > video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+     }
+     @include overlay-filter($brand-success, .8);
+     &::after {
+          @include linear-gradient(45deg,transparentize(darken($brand-info,5%), .3),transparentize($brand-primary, .3), transparentize(darken($brand-primary, 15%), .3));
+     }
+     .scroll-in {
+          position: absolute;
+          bottom: 50px;
+          left: 0;
+          width: 100%;
+          height: auto;
+          padding: .5em;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .mouse {
+               width: 50px;
+               height: 70px;
+               @include linear-gradient(45deg, $brand-light, darken($brand-light,10%) 50%);
+               margin: auto;
+               border-radius: 23px;
+               position: relative;
+               &::before {
+                    position: absolute;
+                    width: 130%;
+                    height: 120%;
+                    border-radius: 30px;
+                    border: 4px solid $brand-primary;
+                    z-index: -1;
+                    content: " ";
+                    left: -15%;
+                    top: -10%;
+                    animation-name: fading-simple;
+                    animation-duration: 1s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: ease-out;
+               }
+               &::after {
+                    position: absolute;
+                    bottom: 12px;
+                    left: calc( 50% - 2px);
+                    width: 4px;
+                    height: 12px;
+                    background: darken($brand-light, 40%);
+                    content: " ";
+                    animation-name: mouscrolling;
+                    animation-duration: 1.5s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: ease-out;
+               }
+          }
+     }
+     .caption {
+          padding: 1em;
+          .gretting {
+               font-family: $font-subtitle;
+               color: $brand-light;
+               margin: 0;
+               text-transform: uppercase;
+          }
+          .brand {
+               font-family: $font-title;
+               color: $brand-light;
+               font-size: 4em;
+               text-transform: capitalize;
+               @include vendor-prefixes(animation, scaling 1.3s ease-out);
+               > span {
+                    text-transform: uppercase;
+               }
+          }
+          .mn-top {
+               ul {
+                    margin: 0;
+                    li {
+                         padding: .4em .5em;
+                         margin: auto .8em;
+                         font-family: $font-text;
+                         font-size: 1.3em;
+                         cursor: pointer;
+                         text-transform: capitalize;
+                         position: relative;
+                         color: $brand-light;
+                         animation-name: fading;
+                         animation-duration: 1.5s;
+                         animation-delay: .8s;
+                         opacity: 0;
+                         animation-fill-mode: forwards;
+                         animation-timing-function: ease-out;
+                         &::before, &::after {
+                              position: absolute;
+                              bottom: 0;
+                              width: 0%;
+                              height: 3px;
+                              content: " ";
+                              @include transition(width .35s);
+                         }
+                         &::before {
+                              right: 50%;
+                         }
+                         &::after {
+                              left: 50%;
+                         }
+                         &:hover, &.active {
+                              &::before, &::after {
+                                   width: 50%;
+                              }
+                         }
+                         &.drink {
+                              &::before, &::after {
+                                   background: $brand-danger;
+                              }
+                         }
+                         &.shop {
+                              &::before, &::after {
+                                   background: $brand-info;
+                              }
+                         }
+                         &.food {
+                              &::before, &::after {
+                                   background: $brand-warning;
+                              }
+                         }
+                         &.walk {
+                              &::before, &::after {
+                                   background: $brand-success;
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}

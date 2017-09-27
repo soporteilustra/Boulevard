@@ -13,7 +13,9 @@
 </head>
 <body>
 
-     <header>
+     <header id="heading">
+          <video id="bgvideo" src="public/media/videobackground.webm" loop autoplay poster="public/media/bg.jpg">
+          </video>
           <div class="container-fluid h-100">
                <div class="row h-100 align-items-center justify-content-center">
                     <div class="col-12 text-center caption">
@@ -21,19 +23,21 @@
                               <div class="col-12">
                                    <img src="" class="img-fluid" alt="Boulevard Logo">
                                    <h4 class="gretting">Bienvenidos a</h4>
-                                   <h1 class="brand">Santa Cruz Boulevard</h1>
+                                   <h1 class="brand">
+                                        <span>Boulevard</span> Santa Cruz
+                                   </h1>
                               </div>
                               <div class="col-12 mn-top">
                                    <ul class="list-unstyled list-inline">
-                                        <li class="list-inline-item drink"><i class="icon ion-wineglass mr-2"></i>Bares</li>
-                                        <li class="list-inline-item shop"><i class="icon ion-bag mr-2"></i>Tiendas</li>
-                                        <li class="list-inline-item food"><i class="icon ion-fork mr-2"></i>Restaurantes</li>
-                                        <li class="list-inline-item walk"><i class="icon ion-ios-partlysunny mr-2"></i>Paseos</li>
+                                        <menu-items v-for="item in menu" v-bind:item="item" v-bind:key="item.id"></menu-items>
                                    </ul>
                               </div>
                          </div>
                     </div>
                </div>
+          </div>
+          <div class="scroll-in">
+               <div class="mouse"></div>
           </div>
      </header>
 

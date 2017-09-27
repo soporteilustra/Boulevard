@@ -1,0 +1,43 @@
+@keyframes scaling {
+     0% {
+          @include vendor-prefixes(transform, scale3d(0,0,0));
+     }
+     85% {
+          @include vendor-prefixes(transform, scale3d(1.05,1.05,1));
+     }
+}
+
+@keyframes mouscrolling {
+     0% {
+          bottom: 12px;
+          opacity: 1;
+     }
+     50% {
+           bottom: 25px;
+          opacity: .5;
+     }
+     100% {
+          border: 12px;
+          opacity: 1;
+     }
+}
+
+@keyframes fading {
+     0% {
+          opacity: 0;
+     }
+     100% {
+          opacity: 1;
+     }
+}
+@keyframes fading-simple {
+     0% {
+          opacity: 1;
+     }
+     50% {
+          opacity: .5;
+     }
+     100% {
+          opacity: 1;
+     }
+}
